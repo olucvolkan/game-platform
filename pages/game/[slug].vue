@@ -8,8 +8,9 @@ const { toggleFavorite, isFavorite } = useFavorites()
 
 const slug = computed(() => route.params.slug as string)
 
-// Fetch game details
-const { data: game, pending, error } = await useFetch<Game>(`/api/games/${slug.value}`)
+// Fetch game details using Laravel API
+const { apiBase } = useApi()
+const { data: game, pending, error } = await useFetch<Game>(`${apiBase}/games/${slug.value}`)
 
 // Computed
 const inCart = computed(() => game.value ? isInCart(game.value.id) : false)

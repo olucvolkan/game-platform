@@ -9,6 +9,7 @@ const inputRef = ref<HTMLInputElement | null>(null)
 
 const { search } = useSearch()
 const router = useRouter()
+const { apiBase } = useApi()
 
 // Debounced autocomplete
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
@@ -26,7 +27,7 @@ const handleInput = async () => {
     isLoading.value = true
     try {
       const response = await $fetch<{ suggestions: AutocompleteSuggestion[] }>(
-        `/api/autocomplete?q=${encodeURIComponent(searchQuery.value)}`
+        `${apiBase}/autocomplete?q=${encodeURIComponent(searchQuery.value)}`
       )
       suggestions.value = response.suggestions
       isOpen.value = suggestions.value.length > 0

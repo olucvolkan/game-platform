@@ -39,8 +39,9 @@ const queryParams = computed(() => {
   return params
 })
 
-// Fetch games
-const { data, pending, error, refresh } = await useFetch<PaginatedResponse<Game>>('/api/list', {
+// Fetch games using Laravel API
+const { apiBase } = useApi()
+const { data, pending, error, refresh } = await useFetch<PaginatedResponse<Game>>(`${apiBase}/list`, {
   query: queryParams,
   watch: [queryParams],
 })

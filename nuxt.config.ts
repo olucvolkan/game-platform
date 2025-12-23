@@ -34,7 +34,18 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: '/api',
+      // Laravel API base URL - change to your deployed API URL in production
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8000/api',
+    },
+  },
+
+  // Proxy API requests in development to avoid CORS issues
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:8000/api',
+        changeOrigin: true,
+      },
     },
   },
 

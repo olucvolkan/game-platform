@@ -41,6 +41,19 @@ export interface Filters {
 
 export type SortOption = 'popularity' | 'price-asc' | 'price-desc' | 'newest' | 'discount'
 
+// API Filter Parameters (for useApi composable)
+export interface FilterParams {
+  page?: number
+  perPage?: number
+  search?: string
+  sort?: SortOption
+  minPrice?: number
+  maxPrice?: number
+  types?: ProductType[]
+  platforms?: Platform[]
+  genres?: string[]
+}
+
 // API Response Types
 export interface PaginatedResponse<T> {
   data: T[]
