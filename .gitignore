@@ -1,0 +1,180 @@
+# =============================================================================
+# LARAVEL (api/)
+# =============================================================================
+
+# Laravel vendor directory
+api/vendor/
+
+# Laravel environment files
+api/.env
+api/.env.backup
+api/.env.production
+
+# Laravel storage (except .gitkeep files)
+api/storage/*.key
+api/storage/app/*
+!api/storage/app/.gitkeep
+api/storage/framework/cache/*
+!api/storage/framework/cache/.gitkeep
+api/storage/framework/sessions/*
+!api/storage/framework/sessions/.gitkeep
+api/storage/framework/views/*
+!api/storage/framework/views/.gitkeep
+api/storage/logs/*
+!api/storage/logs/.gitkeep
+
+# Laravel bootstrap cache
+api/bootstrap/cache/*
+!api/bootstrap/cache/.gitkeep
+
+# Laravel compiled files
+api/public/hot
+api/public/storage
+api/public/build
+
+# Laravel IDE helpers
+api/_ide_helper.php
+api/_ide_helper_models.php
+api/.phpstorm.meta.php
+
+# Laravel Pail
+api/.pail
+
+# Laravel Homestead
+api/Homestead.json
+api/Homestead.yaml
+
+# Laravel Sail
+api/.sail/
+
+# =============================================================================
+# NUXT.JS / VUE (frontend/)
+# =============================================================================
+
+# Nuxt build output
+frontend/.nuxt/
+frontend/.output/
+frontend/dist/
+
+# Nuxt dev cache
+frontend/.data/
+
+# Node modules
+frontend/node_modules/
+
+# Environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Nitro
+frontend/.nitro/
+
+# Nuxt analyze
+frontend/.nuxt-analyze/
+
+# Nuxt stats
+frontend/stats.html
+
+# =============================================================================
+# GENERAL
+# =============================================================================
+
+# Dependencies
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+frontend/coverage/
+api/coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Build artifacts
+*.local
+
+# Debug
+*.pid
+*.seed
+*.pid.lock
+
+# Package manager locks (keep one, ignore others if switching)
+# Uncomment if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# composer.lock
+
+# =============================================================================
+# PROJECT SPECIFIC
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Uploads (if any)
+uploads/
+public/uploads/
+
+# SQLite database (for local development)
+*.sqlite
+*.sqlite3
+database.sqlite
+
+# PHPUnit result cache
+.phpunit.result.cache
+.phpunit.cache/
+
+# Pest result cache
+.pest/
+
+# Generated documentation
+docs/_build/
+
+# Sentry
+.sentryclirc

@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Metropolis Font Face */
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Regular.woff2') format('woff2'),
+       url('/fonts/Metropolis-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Medium.woff2') format('woff2'),
+       url('/fonts/Metropolis-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-SemiBold.woff2') format('woff2'),
+       url('/fonts/Metropolis-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Bold.woff2') format('woff2'),
+       url('/fonts/Metropolis-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base layer customizations */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-primary text-white font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-light;
+  }
+}
+
+/* Component layer customizations */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-primary-950 hover:bg-accent-400;
+  }
+
+  .btn-secondary {
+    @apply bg-primary-800 text-white hover:bg-primary-700;
+  }
+
+  .btn-outline {
+    @apply border border-white/30 text-white hover:bg-white/10;
+  }
+
+  .card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply bg-card-hover shadow-card-hover transform -translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent;
+  }
+
+  .filter-section {
+    @apply py-4 border-b border-white/10;
+  }
+
+  .filter-title {
+    @apply flex items-center justify-between text-white font-medium cursor-pointer;
+  }
+
+  .checkbox-label {
+    @apply flex items-center gap-2 cursor-pointer text-muted hover:text-white transition-colors;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .badge-discount {
+    @apply bg-green-500 text-white;
+  }
+
+  .badge-cashback {
+    @apply bg-accent text-primary-950;
+  }
+
+  .badge-dlc {
+    @apply bg-blue-500 text-white;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-3 py-1 bg-primary-950 rounded-full text-sm text-muted;
+  }
+}
+
+/* Utility layer customizations */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-300;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

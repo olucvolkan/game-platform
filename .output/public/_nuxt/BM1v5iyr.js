@@ -1,0 +1,1 @@
+import{h as t,c as s,a as n,o}from"./DgqYF9Mv.js";const a={class:"flex items-center justify-center min-h-[50vh]"},m=t({__name:"index",setup(r){return(c,e)=>(o(),s("div",a,[...e[0]||(e[0]=[n("p",{class:"text-muted"},"Redirecting to game list...",-1)])]))}});export{m as default};
