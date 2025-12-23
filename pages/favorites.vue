@@ -1,10 +1,19 @@
 <script setup lang="ts">
 const { favorites, favoritesCount, clearFavorites } = useFavorites()
 const { t } = useLanguage()
+const { isAuthenticated } = useAuth()
+
+const showAuthModal = ref(false)
 
 useHead({
   title: 'My Wishlist - Eneba',
 })
+
+const handleClearAll = async () => {
+  if (confirm(t('confirmClearFavorites'))) {
+    await clearFavorites()
+  }
+}
 </script>
 
 <template>
@@ -23,15 +32,44 @@ useHead({
       <button
         v-if="favoritesCount > 0"
         class="btn btn-outline text-sm"
-        @click="clearFavorites"
+        @click="handleClearAll"
       >
-        Clear All
+        {{ t('clearAll') }}
       </button>
     </div>
 
-    <!-- Empty State -->
+    <!-- Not Authenticated Message -->
     <div
-      v-if="favorites.length === 0"
+      v-if="!isAuthenticated && favorites.length === 0"
+      class="text-center py-16"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-16 w-16 mx-auto text-muted mb-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        />
+      </svg>
+      <h2 class="text-white text-xl font-medium mb-2">{{ t('loginToSaveFavorites') }}</h2>
+      <p class="text-muted mb-6">{{ t('loginToSaveFavoritesDescription') }}</p>
+      <button
+        class="btn btn-primary"
+        @click="showAuthModal = true"
+      >
+        {{ t('login') }}
+      </button>
+    </div>
+
+    <!-- Empty State (Authenticated) -->
+    <div
+      v-else-if="favorites.length === 0"
       class="text-center py-16"
     >
       <svg
@@ -48,13 +86,13 @@ useHead({
           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
-      <h2 class="text-white text-xl font-medium mb-2">Your wishlist is empty</h2>
-      <p class="text-muted mb-6">Save games you're interested in to buy later</p>
+      <h2 class="text-white text-xl font-medium mb-2">{{ t('emptyFavorites') }}</h2>
+      <p class="text-muted mb-6">{{ t('emptyFavoritesDescription') }}</p>
       <NuxtLink
         to="/list"
         class="btn btn-primary"
       >
-        Browse Games
+        {{ t('browseGames') }}
       </NuxtLink>
     </div>
 
@@ -63,5 +101,8 @@ useHead({
       v-else
       :games="favorites"
     />
+
+    <!-- Auth Modal -->
+    <AuthModal v-model="showAuthModal" />
   </div>
 </template>

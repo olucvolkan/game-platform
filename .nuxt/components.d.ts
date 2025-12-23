@@ -14,12 +14,12 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const AuthModal: typeof import("../components/auth/AuthModal.vue").default
 export const FooterAppFooter: typeof import("../components/footer/AppFooter.vue").default
 export const FooterPaymentMethods: typeof import("../components/footer/PaymentMethods.vue").default
 export const HeaderAppHeader: typeof import("../components/header/AppHeader.vue").default
 export const HeaderCartPopup: typeof import("../components/header/CartPopup.vue").default
 export const HeaderLogo: typeof import("../components/header/Logo.vue").default
-export const HeaderNavigation: typeof import("../components/header/Navigation.vue").default
 export const HeaderRegionSelector: typeof import("../components/header/RegionSelector.vue").default
 export const HeaderSearchBar: typeof import("../components/header/SearchBar.vue").default
 export const HeaderUserActions: typeof import("../components/header/UserActions.vue").default
@@ -59,12 +59,12 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components").Html
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components").Body
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island").default
+export const LazyAuthModal: LazyComponent<typeof import("../components/auth/AuthModal.vue").default>
 export const LazyFooterAppFooter: LazyComponent<typeof import("../components/footer/AppFooter.vue").default>
 export const LazyFooterPaymentMethods: LazyComponent<typeof import("../components/footer/PaymentMethods.vue").default>
 export const LazyHeaderAppHeader: LazyComponent<typeof import("../components/header/AppHeader.vue").default>
 export const LazyHeaderCartPopup: LazyComponent<typeof import("../components/header/CartPopup.vue").default>
 export const LazyHeaderLogo: LazyComponent<typeof import("../components/header/Logo.vue").default>
-export const LazyHeaderNavigation: LazyComponent<typeof import("../components/header/Navigation.vue").default>
 export const LazyHeaderRegionSelector: LazyComponent<typeof import("../components/header/RegionSelector.vue").default>
 export const LazyHeaderSearchBar: LazyComponent<typeof import("../components/header/SearchBar.vue").default>
 export const LazyHeaderUserActions: LazyComponent<typeof import("../components/header/UserActions.vue").default>

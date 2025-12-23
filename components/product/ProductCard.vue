@@ -8,10 +8,12 @@ const props = defineProps<{
 const { addToCart, isInCart } = useCart()
 const { toggleFavorite, isFavorite } = useFavorites()
 const { formatPrice } = useLanguage()
+const { isAuthenticated } = useAuth()
 
 const isHovered = ref(false)
 const inCart = computed(() => isInCart(props.game.id))
 const inFavorites = computed(() => isFavorite(props.game.id))
+const showAuthModal = ref(false)
 
 const handleAddToCart = (e: Event) => {
   e.preventDefault()
@@ -19,10 +21,16 @@ const handleAddToCart = (e: Event) => {
   addToCart(props.game)
 }
 
-const handleToggleFavorite = (e: Event) => {
+const handleToggleFavorite = async (e: Event) => {
   e.preventDefault()
   e.stopPropagation()
-  toggleFavorite(props.game)
+
+  const result = await toggleFavorite(props.game)
+
+  // If not authenticated, show login modal
+  if (result?.requiresAuth) {
+    showAuthModal.value = true
+  }
 }
 </script>
 
@@ -34,11 +42,11 @@ const handleToggleFavorite = (e: Event) => {
     @mouseleave="isHovered = false"
   >
     <!-- Image Container -->
-    <div class="relative aspect-[3/4] overflow-hidden">
+    <div class="relative aspect-[3/4] overflow-hidden bg-primary-900">
       <img
         :src="game.image"
         :alt="game.title"
-        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
 
@@ -109,15 +117,10 @@ const handleToggleFavorite = (e: Event) => {
 
     <!-- Content -->
     <div class="p-3">
-      <!-- Platform Icon & Title -->
-      <div class="flex items-start gap-2 mb-2">
-        <div class="shrink-0 mt-0.5">
-          <UiPlatformIcon :platform="game.platform" class="w-4 h-4 text-muted" />
-        </div>
-        <h3 class="text-white text-sm font-medium line-clamp-2 leading-tight">
-          {{ game.title }}
-        </h3>
-      </div>
+      <!-- Title -->
+      <h3 class="text-white text-sm font-medium line-clamp-2 leading-tight mb-2">
+        {{ game.title }}
+      </h3>
 
       <!-- Region -->
       <p class="text-accent text-xs font-medium mb-3">
@@ -169,5 +172,8 @@ const handleToggleFavorite = (e: Event) => {
         </button>
       </Transition>
     </div>
+
+    <!-- Auth Modal -->
+    <AuthModal v-model="showAuthModal" />
   </NuxtLink>
 </template>

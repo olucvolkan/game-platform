@@ -26,6 +26,24 @@ const translations: Record<LanguageCode, Translations> = {
     cart: 'Cart',
     login: 'Log In',
     register: 'Sign Up',
+    logout: 'Log Out',
+
+    // Auth
+    email: 'Email',
+    password: 'Password',
+    name: 'Name',
+    confirmPassword: 'Confirm Password',
+    emailPlaceholder: 'Enter your email',
+    passwordPlaceholder: 'Enter your password',
+    namePlaceholder: 'Enter your name',
+    confirmPasswordPlaceholder: 'Confirm your password',
+    loading: 'Loading...',
+    loginToSaveFavorites: 'Log in to save your favorites',
+    loginToSaveFavoritesDescription: 'Create an account to save your favorite games across all your devices',
+    emptyFavorites: 'Your wishlist is empty',
+    emptyFavoritesDescription: 'Save games you\'re interested in to buy later',
+    browseGames: 'Browse Games',
+    confirmClearFavorites: 'Are you sure you want to clear all favorites?',
 
     // Page
     pageTitle: 'Games, Gift Cards, Top-ups and More | Best Deals',
@@ -70,6 +88,24 @@ const translations: Record<LanguageCode, Translations> = {
     cart: 'Sepet',
     login: 'Oturum Acin',
     register: 'Kayit Olun',
+    logout: 'Cikis Yap',
+
+    // Auth
+    email: 'E-posta',
+    password: 'Sifre',
+    name: 'Isim',
+    confirmPassword: 'Sifreyi Onayla',
+    emailPlaceholder: 'E-postanizi girin',
+    passwordPlaceholder: 'Sifrenizi girin',
+    namePlaceholder: 'Isminizi girin',
+    confirmPasswordPlaceholder: 'Sifrenizi onaylayin',
+    loading: 'Yukleniyor...',
+    loginToSaveFavorites: 'Favorilerinizi kaydetmek icin giris yapin',
+    loginToSaveFavoritesDescription: 'Favori oyunlarinizi tum cihazlarinizda kaydetmek icin bir hesap olusturun',
+    emptyFavorites: 'Istek listeniz bos',
+    emptyFavoritesDescription: 'Ilgilendiginiz oyunlari daha sonra satin almak icin kaydedin',
+    browseGames: 'Oyunlara Goz At',
+    confirmClearFavorites: 'Tum favorileri temizlemek istediginizden emin misiniz?',
 
     // Page
     pageTitle: 'Oyunlar, Hediye Kartlari, Kontor Yukleme ve Daha Fazlasi | En Iyi Firsatlar',
@@ -114,6 +150,24 @@ const translations: Record<LanguageCode, Translations> = {
     cart: 'Warenkorb',
     login: 'Anmelden',
     register: 'Registrieren',
+    logout: 'Abmelden',
+
+    // Auth
+    email: 'E-Mail',
+    password: 'Passwort',
+    name: 'Name',
+    confirmPassword: 'Passwort bestatigen',
+    emailPlaceholder: 'Geben Sie Ihre E-Mail ein',
+    passwordPlaceholder: 'Geben Sie Ihr Passwort ein',
+    namePlaceholder: 'Geben Sie Ihren Namen ein',
+    confirmPasswordPlaceholder: 'Bestatigen Sie Ihr Passwort',
+    loading: 'Laden...',
+    loginToSaveFavorites: 'Melden Sie sich an, um Favoriten zu speichern',
+    loginToSaveFavoritesDescription: 'Erstellen Sie ein Konto, um Ihre Lieblingsspiele auf allen Geraten zu speichern',
+    emptyFavorites: 'Ihre Wunschliste ist leer',
+    emptyFavoritesDescription: 'Speichern Sie Spiele, die Sie spater kaufen mochten',
+    browseGames: 'Spiele durchsuchen',
+    confirmClearFavorites: 'Sind Sie sicher, dass Sie alle Favoriten loschen mochten?',
 
     // Page
     pageTitle: 'Spiele, Geschenkkarten, Aufladungen und mehr | Beste Angebote',

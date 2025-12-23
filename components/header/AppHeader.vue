@@ -26,8 +26,5 @@ const { t } = useLanguage()
         </div>
       </div>
     </div>
-
-    <!-- Navigation -->
-    <HeaderNavigation />
   </header>
 </template>

@@ -63,7 +63,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Metropolis', 'Inter', 'Arial', 'Helvetica', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Arial', 'Helvetica', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         'container': '1240px',

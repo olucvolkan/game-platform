@@ -14,12 +14,12 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  'AuthModal': typeof import("../../components/auth/AuthModal.vue").default
   'FooterAppFooter': typeof import("../../components/footer/AppFooter.vue").default
   'FooterPaymentMethods': typeof import("../../components/footer/PaymentMethods.vue").default
   'HeaderAppHeader': typeof import("../../components/header/AppHeader.vue").default
   'HeaderCartPopup': typeof import("../../components/header/CartPopup.vue").default
   'HeaderLogo': typeof import("../../components/header/Logo.vue").default
-  'HeaderNavigation': typeof import("../../components/header/Navigation.vue").default
   'HeaderRegionSelector': typeof import("../../components/header/RegionSelector.vue").default
   'HeaderSearchBar': typeof import("../../components/header/SearchBar.vue").default
   'HeaderUserActions': typeof import("../../components/header/UserActions.vue").default
@@ -59,12 +59,12 @@ interface _GlobalComponents {
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island").default
+  'LazyAuthModal': LazyComponent<typeof import("../../components/auth/AuthModal.vue").default>
   'LazyFooterAppFooter': LazyComponent<typeof import("../../components/footer/AppFooter.vue").default>
   'LazyFooterPaymentMethods': LazyComponent<typeof import("../../components/footer/PaymentMethods.vue").default>
   'LazyHeaderAppHeader': LazyComponent<typeof import("../../components/header/AppHeader.vue").default>
   'LazyHeaderCartPopup': LazyComponent<typeof import("../../components/header/CartPopup.vue").default>
   'LazyHeaderLogo': LazyComponent<typeof import("../../components/header/Logo.vue").default>
-  'LazyHeaderNavigation': LazyComponent<typeof import("../../components/header/Navigation.vue").default>
   'LazyHeaderRegionSelector': LazyComponent<typeof import("../../components/header/RegionSelector.vue").default>
   'LazyHeaderSearchBar': LazyComponent<typeof import("../../components/header/SearchBar.vue").default>
   'LazyHeaderUserActions': LazyComponent<typeof import("../../components/header/UserActions.vue").default>
